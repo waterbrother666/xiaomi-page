@@ -90,4 +90,61 @@
     1.可以使用:nth-child()选择器来选择特定的子元素，例如选择第6个li元素。
     2.通过设置display: none;可以隐藏该元素的伪元素::after，从而实现不显示边框的效果。
     3.这种方法可以灵活地控制哪些元素需要显示边框，哪些不需要，而不必修改HTML结构。
+19.实现鼠标浮动在图片上方时图片自动上下左右移动1-2px
+    利用transform; transform的语法
+        1.位移 translate(x,y)translateX(10px)水平向右移动translateY(-5px)：垂直向上移动（负值向上）。
+        2.旋转 rotate(填入你想旋转的角度) +表示顺时针 -表示逆时针 适用于下拉菜单的小箭头 下拉后反转180度
+        3.缩放 scale(x,y) 例如 scale(1.1)整体放大1.1倍 scale(0.5)缩小一半
+        4.倾斜 skew(x-angle,y-angle) 让元素斜着延申 例如实现平行四边形
+    补充 这几个性质都可以叠加使用 例如 tranform: translateY(-2px) scale(1.05)
 
+20.data-属性
+    1.后面可以跟任意小写字母
+    2.作用 方便js的读取 如果按以前的方法 会导致匹配效率底
+    3.这个东西是用来标记属性的
+        读取方法：
+        1.在js里面使用dataset(浏览器会把data-属性全部放在dataset里面)
+        例如 var li = document.querySelector('li');
+        console.log(li.dataset.type); // 输出: "phone"
+        推荐使用这种方法
+
+21.利用display:none 可以隐藏一个界面或者元素的显示 方便后续做一个事件来触发他
+
+23.载css和js里面 #用来匹配h5标签里面的id属性 
+    例如在h5有 <ul id = "left"></ul>
+    如果想拿到ul下的li 只要在后面加一个li就可
+    则在js里面进行引用则为 document.querySelector('#left li')
+
+24.补充 js里面的forEach类似于c里面的循环
+    例如想遍历一个数组 我只要
+    const arr = ['1','2','3']
+    arr.forEach(item=>{
+        console.log(item)
+    })
+    注意的是这里的item相当于c里面的arr[i]
+
+25.反引号` `
+    1.作用 是用来构造一个多行的 复杂的字符串 然后再把这个字符串赋值给let变量的工具
+    2.例如let html = '<div class="111">'
+        后面可以添加html += `<div class="222">
+                        <span>···</span>
+                        <img src="" alt="">
+                    </div>`
+        温馨提示 如果以h5的属性作为let内容 别忘在最后加上</属性名字> 例如这里html += </div> 
+    3.$和反引号的搭配使用以上面为例子
+    html += `<div class="222">
+        <span>${··name}</span>
+        <img src="${···img}" alt="">
+    </div>`
+        1.这里的${···img}的作用 告诉浏览器去··对象把img拿出来贴在src后面
+        2.${···name}的作用 把··对象的name拿出来放在span里面
+
+26.# 的用法
+    1.作用 是用来引出以id命名的css属性
+    例如现在有一个<div id="nihao"></div>
+    用#nihao{
+        css属性
+    }
+
+
+27.script标签的注意 最好把<script></script>放在body的最后 防止脚本加载过早

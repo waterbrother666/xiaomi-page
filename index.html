@@ -61,19 +61,22 @@
 
     <!-- 核心区 分为两个模块 侧边菜单和轮播图片(或许可以使用视频) -->
     <section class="hero-container">
+        <img src="./images/1.png" id="banner-img" alt="轮播图">
         <div class="side-category">
-            <ul>
-                <li><a href="#">手机<span>&gt;</span></a></li>
-                <li><a href="#">电视<span>&gt;</span></a></li>
-                <li><a href="#">家电<span>&gt;</span></a></li>
-                <li><a href="#">笔记本 平板<span>&gt;</span></a></li>
-                <li><a href="#">出行 穿戴<span>&gt;</span></a></li>
-                <li><a href="#">耳机 音箱<span>&gt;</span></a></li>
-                <li><a href="#">智能 路由器<span>&gt;</span></a></li>
-                <li><a href="#">安防 落地灯<span>&gt;</span></a></li>
-                <li><a href="#">生活 箱包<span>&gt;</span></a></li>
+            <ul id = "leftmenu">
+                <li data-type="phone"><a href="#">手机<span>&gt;</span></a></li>
+                <li data-type="tv"><a href="#">电视<span>&gt;</span></a></li>
+                <li data-type="home"><a href="#">家电<span>&gt;</span></a></li>
+                <li data-type="pad"><a href="#">笔记本 平板<span>&gt;</span></a></li>
+                <li data-type="out"><a href="#">出行 穿戴<span>&gt;</span></a></li>
+                <li data-type="ear"><a href="#">耳机 音箱<span>&gt;</span></a></li>
+                <li data-type="zhin"><a href="#">智能 路由器<span>&gt;</span></a></li>
+                <li data-type="secure"><a href="#">安防 落地灯<span>&gt;</span></a></li>
+                <li data-type="life"><a href="#">生活 箱包<span>&gt;</span></a></li>
             </ul>
         </div>
+
+        <div class="categorydetail" id="categoryDetail"></div>
 
         <div class="change-photo">
             <span class="xiaoyu">&lt;</span>
@@ -104,6 +107,6 @@
 
     </section>
 
-
+    <script src="./xiaomi.js"></script>
 </body>
 </html>
